@@ -4,7 +4,7 @@ CostaLingua is meant as a platform so people can learn Spanish.
 
 # Disclaimer
 
-This is a test, proof-of-concept project, and not meant to be a final product (although it may be deployed). The functionality and the codebase may change erratically and suddenly.
+**This is a test, proof-of-concept project, and not meant to be a final product** (although it may be deployed). **The functionality and the codebase may change erratically and suddenly.**
 
 ## Features
 
