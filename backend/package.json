@@ -1,0 +1,16 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "CostaLinua backend implementation",
+  "main": "index.js",
+  "scripts": {
+    "run": "nodemon server.js"
+  },
+  "keywords": [
+    "costalingua",
+    "backend",
+    "server"
+  ],
+  "author": "Pablo Luis Molina Blanes",
+  "license": "MIT"
+}
