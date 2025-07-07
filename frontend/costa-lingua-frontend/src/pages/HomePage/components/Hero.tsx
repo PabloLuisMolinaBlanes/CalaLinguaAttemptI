@@ -1,11 +1,8 @@
-import ReactImage from "../assets/react.svg";
-
-
 function Hero() {
     return (
         <>
         <div id="hero" className="flex max-lg:flex-col lg:flex-row pb-30">
-            <div id="left" className="lg:w-3/9 sm:text-left max-sm:text-center"><p>Your platform for learning Spanish</p></div>
+            <div id="left" className="lg:w-3/9 sm:text-left max-sm:text-center font-inter text-3xl pl-4"><p>Your platform for learning Spanish</p></div>
             <div id="center" className="lg:w-3/9 max-lg:w-9/9"></div>
             <div id="right" className="lg:w-3/9 max-lg:w-9/9"><img src="https://placehold.co/512x512"></img></div>
         </div>        
