@@ -1,1 +1,0 @@
-const sessions_users = []

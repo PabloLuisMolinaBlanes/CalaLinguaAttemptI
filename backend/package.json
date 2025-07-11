@@ -4,7 +4,7 @@
   "description": "CostaLinua backend implementation",
   "main": "index.js",
   "scripts": {
-    "run": "nodemon server.js"
+    "build": "npx tsc --build && nodemon ./build/main-server.js"
   },
   "keywords": [
     "costalingua",
@@ -12,5 +12,19 @@
     "server"
   ],
   "author": "Pablo Luis Molina Blanes",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "argon2": "^0.43.0",
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "mysql2": "^3.14.1",
+    "typescript": "^5.8.3"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.0.13"
+  }
 }
