@@ -1,7 +1,7 @@
 import express from 'express'
 import cors from 'cors'
-import { hashPassword } from './services/auth'
-import { addUser } from './services/userService'
+import { hashPassword, comparePasswords, makeId, addUserSession } from './services/auth'
+import { addUser, getUserPasswordHash } from './services/userService'
 
 const app = express()
 const corsOptions = {
@@ -19,7 +19,23 @@ app.post("/signup", async (req, res) => {
     const username = req.body.username
     const password = await hashPassword(req.body.password)
     const userresult = await addUser(username, password)
-    res.send(userresult)
+    res.send("Done! Please, return to the main screen and log in")
+})
+
+app.post("/login", async (req, res) => {
+    const username = req.body.username
+    const password = req.body.password
+    const passwordHashRows = await getUserPasswordHash(username)
+    if (passwordHashRows[0].length > 0) {
+        const passwordHash = passwordHashRows[0][0].password
+        const result = await comparePasswords(password, passwordHash)
+        if (result) {
+            const id = makeId(20)
+            addUserSession(username, password)
+            res.send(id)
+        }
+    }
+    res.send("Incorrect username/password!");
 })
 
 
