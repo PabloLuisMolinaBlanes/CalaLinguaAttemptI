@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-interface FuncProps {
-    handleClick: (user : string, password: string) => Promise<void>;
+type FuncProps = {
+    handleClick: (user : string, password: string) => Promise<void>,
 }
 
 const Form = (props : FuncProps) => {
@@ -18,15 +18,17 @@ const Form = (props : FuncProps) => {
     <div id="form" className="flex flex-col">
         <div id="top" className="pb-20 flex flex-row">
             <div id="left" className="w-3/9"></div>
-            <div id="center" className="w-3/9 border-1">
-                <input type="text" value={username} className="w-10/10" onChange={handleUsername}></input>
+            <div id="center" className="w-3/9">
+                <h2 className="text-xl text-center font-jojo pb-4">Username</h2>
+                <input type="text" value={username} className="w-10/10 border-1" onChange={handleUsername}></input>
             </div>
             <div id="right" className="w-3/9"></div>
         </div>
         <div id="center" className="pb-20 flex flex-row">
             <div id="left" className="w-3/9"></div>
-            <div id="center" className="w-3/9 border-1">
-                <input type="password" value={password} className="w-10/10" onChange={handlePassword}></input>
+            <div id="center" className="w-3/9">
+            <h2 className="text-xl text-center font-jojo pb-4">Password</h2>
+                <input type="password" value={password} className="w-10/10 border-1" onChange={handlePassword}></input>
             </div>
             <div id="right" className="w-3/9"></div>
         </div>

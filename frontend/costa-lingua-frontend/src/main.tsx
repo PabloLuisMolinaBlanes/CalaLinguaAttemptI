@@ -12,7 +12,11 @@ const router = createBrowserRouter([
   },
   {
     path: '/login',
-    element: <Auth />
+    element: <Auth isSignUp={false} />
+  },
+  {
+    path: '/signup',
+    element: <Auth isSignUp={true} />
   }
 ])
 

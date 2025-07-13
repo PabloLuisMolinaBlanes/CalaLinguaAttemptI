@@ -1,20 +1,28 @@
 import { useState } from 'react'
-//import callAuthServer from './utils/api'
 import Login from './components/Login';
 import api from '../../utlis/api'
 
-function Auth() {
-  const [loggedIn, setloggedIn] = useState(false);
-  const authenticate = async (user : string, password : string) : Promise<void> => {
+type BoolProps = {
+    isSignUp: boolean;
+}
 
+const Auth = (props : BoolProps) => {
+  const [loggedIn, setloggedIn] = useState(false);
+  const [incorrectAttempt, setIncorrectAttempt] = useState(false)
+  const path = props.isSignUp ? "/signup" : "/login"
+  const errorMessage = incorrectAttempt ? <h2 className='text-center text-red-500 text-3xl pt-20 pb-20'>Incorrect username/password!</h2> : ""
+  const message = props.isSignUp ? "Signed up successfully! Please, return to the authentication screen"  : "Logged in!"
+
+  const authenticate = async (user : string, password : string) : Promise<void> => {
+    setIncorrectAttempt(false)
     const loginInfo = {username: user, password: password};
 
     try {
-        const result = await api.post('/login', loginInfo)
+        const result = await api.post(path, loginInfo)
         if (result.data !== "Incorrect username/password!") {
             setloggedIn(true);
         } else {
-            console.log(result.data);
+            setIncorrectAttempt(true)
         }
         //
     } catch (err) {
@@ -24,11 +32,12 @@ function Auth() {
 
     if (loggedIn) {
         return (<>
-        <h2>Logged in!</h2>
+        <h2>{message}</h2>
         </>)
     } else {
         return (<>
-        <Login handleClick={authenticate} />
+        {errorMessage}
+        <Login handleClick={authenticate} isSignUp={props.isSignUp} />
         </>)
     }
 }

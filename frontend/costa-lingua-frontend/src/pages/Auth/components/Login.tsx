@@ -2,17 +2,18 @@
 import Form from "./Form";
 import Title from "./Title";
 
-interface FuncProps {
-    handleClick: (user : string, password: string) => Promise<void>;
+type FuncProps = {
+    handleClick: (user : string, password: string) => Promise<void>,
+    isSignUp: boolean,
 }
 
-const Auth = (props: FuncProps) => {
+const Login = (props: FuncProps) => {
     return (<>
         <div id="login">
-            < Title />
+            < Title isSignUp={props.isSignUp} />
             < Form handleClick={props.handleClick} />
         </div>
         </>)
 }
 
-export default Auth;
+export default Login;
