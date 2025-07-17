@@ -1,0 +1,32 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Profile {
+  UserID   Int    @id @default(autoincrement())
+  username String @db.VarChar(100)
+  password String @db.VarChar(100)
+}
+
+model Question {
+  id             Int     @id @default(autoincrement())
+  question       String  @db.Text
+  correct_answer String  @db.Text
+  miscellanea    String? @db.Text
+  type_id        Int?
+  Type           Type?   @relation(fields: [type_id], references: [id], onDelete: Cascade, map: "Question_Type_FK")
+
+  @@index([type_id], map: "Question_Type_FK")
+}
+
+model Type {
+  id       Int        @id @default(autoincrement())
+  name     String     @db.Text
+  Question Question[]
+}

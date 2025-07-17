@@ -1,5 +1,5 @@
 import "./HomePage.css"
-import NavBar from "./components/NavBar";
+import NavBar from "../../components/NavBar";
 import Body from "./components/Body";
 import Button from "./components/Button";
 import Gallery from "./components/Gallery";

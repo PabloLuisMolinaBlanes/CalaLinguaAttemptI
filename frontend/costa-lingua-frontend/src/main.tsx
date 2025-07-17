@@ -4,6 +4,12 @@ import './index.css'
 import HomePage from './pages/HomePage/HomePage.tsx'
 import Auth from './pages/Auth/Auth.tsx'
 import { createBrowserRouter, RouterProvider } from 'react-router'
+import MainPage from './pages/MainPage/MainPage.tsx'
+import { Provider } from 'react-redux'
+import store from './utlis/state/store.ts'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+
+const queryClient = new QueryClient()
 
 const router = createBrowserRouter([
   {
@@ -17,11 +23,19 @@ const router = createBrowserRouter([
   {
     path: '/signup',
     element: <Auth isSignUp={true} />
+  },
+  {
+    path: '/main',
+    element: <MainPage />
   }
 ])
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <QueryClientProvider client={queryClient}>
+        <RouterProvider router={router} />
+      </QueryClientProvider>
+    </Provider>
   </StrictMode>,
 )
