@@ -2,12 +2,12 @@ import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 export const authSlice = createSlice({
     name: 'sessionState',
-    initialState: "AAA",
+    initialState: "",
     reducers: {
-        authenticate: (state, action : PayloadAction<string>) => {state = action.payload},
-        logout: (state) => {state = ""}
+        authenticateUser: (state, action : PayloadAction<string>) => {return action.payload},
+        logout: (state) => {return ""}
     },
 })
 
-export const {authenticate, logout} = authSlice.actions
+export const {authenticateUser, logout} = authSlice.actions
 export default authSlice.reducer;

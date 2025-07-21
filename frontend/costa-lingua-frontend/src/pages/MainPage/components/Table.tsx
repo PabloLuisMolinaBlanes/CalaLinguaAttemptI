@@ -1,11 +1,8 @@
-import { useState } from "react";
-import { useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import TableRow from "./TableRow";
 import api from "../../../utlis/api";
 import TableHeader from "./TableHeader";
 import type { Questionnaire } from "../../../types/Questionnaire";
-import { data } from "react-router";
 
 type TypeType = {id: number, name: string}[]
 

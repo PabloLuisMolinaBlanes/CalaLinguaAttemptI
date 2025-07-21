@@ -1,21 +1,30 @@
 import { useNavigate } from "react-router";
-
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../utlis/state/authSlice";
+import type { RootState } from "../utlis/state/store";
 type Link = {
     name: string,
-    path: string
+    path: string,
 }
 
+
+
 function NavBar() {
-    
-    const links = [{name: "Play", path: "home"},{name: "Account", path: "login"},{name: "Logout", path: "logout"}]
+    const authState = useSelector((sessionID : RootState) => sessionID)
+    const dispatch = useDispatch()
+    const links = [{name: "Play", path: "/main"},{name: "Account", path: "/login"},{name: "Logout", path: "/logout"}]
     const linksTags = links.map((link : Link) => {
-        return (<p className="p-4 font-jojo cursor-pointer" onClick={() => redirectLogin(link.path)}>{link.name}</p>)
+        return (<p className="p-4 font-jojo cursor-pointer" onClick={link.path === "/logout" ? () => logoutUser() : () => redirectLogin(link.path)}>{link.name}</p>)
     })
 
     let navigate = useNavigate()
 
     const redirectLogin = (path: string) : void => {
         navigate(path);
+    }
+
+    const logoutUser = () => {
+        dispatch(logout())
     }
 
     return (

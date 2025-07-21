@@ -6,3 +6,9 @@ export const checkAuthState = (authState : RootState, navigate : NavigateFunctio
         navigate("/login");
     }
 }
+
+export const checkAuthStateLogin = (authState : RootState, navigate : NavigateFunction) => {
+    if (authState === "") {
+        navigate("/main");
+    }
+}
