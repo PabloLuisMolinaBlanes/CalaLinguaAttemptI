@@ -20,12 +20,11 @@ function QuestionnairePage() {
     const [title, setTitle] = useState("")
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
 
-    /*
     // Implements auth functionality on the client
     useEffect(() => {
         checkAuthState(authState, navigate)
     }, [])
-*/
+
     const getQuestionnaires = async () => {
         const result = await api.get(`/getQuestions?id=${params.id}`)
         const obtainedQuestions : QuestionnairePlay[] = await result.data;
