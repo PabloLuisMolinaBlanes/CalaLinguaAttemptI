@@ -2,7 +2,7 @@ import express from 'express'
 import cors from 'cors'
 import { hashPassword, comparePasswords, makeId, addUserSession } from './services/auth'
 import { addUser, getUserPasswordHash } from './services/userService'
-import { readAllQuestions, readAllTypes } from './services/questionsService'
+import { readAllQuestions, readAllTypes, readQuestionsByType } from './services/questionsService'
 
 const app = express()
 const corsOptions = {
@@ -17,6 +17,10 @@ app.use(express.urlencoded({extended: true}))
 
 app.get('/getQuestionnaires', async (req, res) => {
     res.send(await readAllQuestions())
+})
+
+app.get('/getQuestions', async (req, res) => {
+    res.send(await readQuestionsByType(req.query.id as string))
 })
 
 app.get('/getTypes', async (req, res) => {

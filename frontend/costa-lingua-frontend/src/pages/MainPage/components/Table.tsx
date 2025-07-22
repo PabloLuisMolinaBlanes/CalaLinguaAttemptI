@@ -2,9 +2,8 @@ import { useQuery } from "@tanstack/react-query";
 import TableRow from "./TableRow";
 import api from "../../../utlis/api";
 import TableHeader from "./TableHeader";
+import type { TypeType } from "../../../types/TypeType";
 import type { Questionnaire } from "../../../types/Questionnaire";
-
-type TypeType = {id: number, name: string}[]
 
 
 function Table() {

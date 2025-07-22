@@ -8,6 +8,7 @@ import MainPage from './pages/MainPage/MainPage.tsx'
 import { Provider } from 'react-redux'
 import store from './utlis/state/store.ts'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import QuestionnairePage from './pages/QuestionnairePage/QuestionnairePage.tsx'
 
 const queryClient = new QueryClient()
 
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
   {
     path: '/main',
     element: <MainPage />
+  },
+  {
+    path: '/questionnaire/:id',
+    element: <QuestionnairePage />
   }
 ])
 
