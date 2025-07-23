@@ -2,7 +2,7 @@
 
 CalaLingua is meant as a platform so people can learn Spanish.
 
-test
+test2
 
 # Disclaimer
 
