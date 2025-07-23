@@ -60,25 +60,25 @@ function QuestionnairePage() {
       }
 
 
-    return (<>
+  return (<>
     <div id="container" className="flex flex-row p-4">
-    <div id="left" className="w-3/9"></div>
-    <div id="center" className="w-3/9">
-    <h1 className="text-3xl font-bold font-inter pb-12">¿Qué significa lo siguiente en inglés?</h1>
-    <h1 className="text-3xl font-bold font-inter pb-6">{title}</h1>
-    <input type="text" value={answer} className="w-10/10 pb-4" onChange={handleAnswer}></input>
-    <div id="center" className="w-9/9 text-center bg-[#D95353] font-inter text-3xl h-30 flex flex-col cursor-pointer" onClick={() => {handleClick()}}>
-    <div id="top" className="h-3/9">
-</div>
-<div id="right" className="h-3/9">
-    <p>Enter</p>
-</div>
-<div id="bottom" className="h-3/9">
+      <div id="left" className="w-3/9"></div>
+      <div id="center" className="w-3/9">
+        <h1 className="text-3xl font-bold font-inter pb-12">¿Qué significa lo siguiente en inglés?</h1>
+        <h1 className="text-3xl font-bold font-inter pb-6">{title}</h1>
+        <input type="text" value={answer} className="w-10/10 pb-4" onChange={handleAnswer}></input>
+        <div id="center" className="w-9/9 text-center bg-[#D95353] font-inter text-3xl h-30 flex flex-col cursor-pointer" onClick={() => { handleClick() }}>
+          <div id="top" className="h-3/9">
+          </div>
+          <div id="right" className="h-3/9">
+            <p>Enter</p>
+          </div>
+          <div id="bottom" className="h-3/9">
 
-</div>
-    </div>
-    </div>
-    <div id="right" className="w-3/9"></div>
+          </div>
+        </div>
+      </div>
+      <div id="right" className="w-3/9"></div>
     </div>
     <div id="correctness" className="flex flex-row">
       <div id="left" className="w-5/6">
@@ -88,7 +88,7 @@ function QuestionnairePage() {
         Correct/Incorrect
       </div>
     </div>
-    </>)
+  </>)
 }
 
 export default QuestionnairePage;

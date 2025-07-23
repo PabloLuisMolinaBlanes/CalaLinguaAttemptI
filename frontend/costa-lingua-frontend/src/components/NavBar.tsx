@@ -31,7 +31,7 @@ function NavBar() {
         <>
         <div className="flex flex-row pb-40" id="navbar">
             <div id="right" className="">
-            <p className="p-4 font-jojo font-bold">CostaLingua</p>
+            <p className="p-4 font-jojo font-bold">CalaLingua</p>
             </div>
             <div id="center" className="w-9/10"></div>
             <div id="left" className="flex flex-row">

@@ -52,5 +52,5 @@ app.post("/login", async (req, res) => {
 
 
 app.listen(port, () => {
-    console.log(`CostaLingua backend server is now listening in port ${port}`)
+    console.log(`CalaLingua backend server is now listening in port ${port}`)
 })

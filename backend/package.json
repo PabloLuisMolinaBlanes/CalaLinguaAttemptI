@@ -7,7 +7,7 @@
     "build": "npx tsc --build && nodemon ./build/main-server.js"
   },
   "keywords": [
-    "costalingua",
+    "CalaLingua",
     "backend",
     "server"
   ],

@@ -16,7 +16,7 @@ const Auth = (props : BoolProps) => {
   const authState = useSelector((sessionID : RootState) => sessionID)
   const navigate = useNavigate()
   const dispatch = useDispatch()
-  const [loggedIn, setloggedIn] = useState(authState === "" ? false : true);
+  const [loggedIn, setLoggedIn] = useState(authState === "" ? false : true);
   const [incorrectAttempt, setIncorrectAttempt] = useState(false)
   const path = props.isSignUp ? "/signup" : "/login"
   const errorMessage = incorrectAttempt ? <h2 className='text-center text-red-500 text-3xl pt-20 pb-20'>Incorrect username/password!</h2> : ""
@@ -36,7 +36,7 @@ useEffect(() => {
         const result = await api.post(path, loginInfo)
         if (result.data !== "Incorrect username/password!") {
             dispatch(authenticateUser(result.data));
-            setloggedIn(true)
+            setLoggedIn(true)
             navigate('/main')
         } else {
             setIncorrectAttempt(true)

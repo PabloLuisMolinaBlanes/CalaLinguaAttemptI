@@ -1,6 +1,6 @@
-# CostaLinguaAttemptI (not final version)
+# CalaLinguaAttemptI (not final version)
 
-CostaLingua is meant as a platform so people can learn Spanish.
+CalaLingua is meant as a platform so people can learn Spanish.
 
 # Disclaimer
 
