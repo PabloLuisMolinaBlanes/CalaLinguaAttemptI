@@ -2,6 +2,8 @@
 
 CalaLingua is meant as a platform so people can learn Spanish.
 
+test
+
 # Disclaimer
 
 **This is a test, proof-of-concept project, it is not production-ready, and not meant to be a final product** (although I may deploy it as a demo). **The functionality and the codebase may change erratically and suddenly.**
