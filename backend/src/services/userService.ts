@@ -3,7 +3,7 @@ const con = mysql.createPool({
     host: "localhost",
     user: "root",
     password: "root", // Default username and password. root:root, highly advisable to change this if using.
-    database: "CalaLingua"
+    database: "CostaLingua"
 }).promise()
 
 export async function addUser(username : string, hash : string) : Promise<any> {

@@ -18,7 +18,7 @@ function Table() {
         queryFn: getQuestionnaires,
     })
 
-    const rows = isPending ? <div>Please, wait...</div> : data === undefined ? <div>Nothing found</div> : data.map((t : Questionnaire) => <TableRow name={t.id.toString().concat(" questionnaire")} type={t.name.concat(" questionnaire")} difficulty={t.name}/>)
+    const rows = isPending ? <div>Please, wait...</div> : data === undefined ? <div>Nothing found</div> : data.map((t : Questionnaire) => <TableRow id={t.id} name={t.id.toString().concat(" questionnaire")} type={t.name.concat(" questionnaire")} difficulty={t.name}/>)
 
     return (<>
         <table className="font-inter p-4">
