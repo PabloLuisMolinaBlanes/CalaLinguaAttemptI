@@ -4,7 +4,7 @@
   "description": "CostaLinua backend implementation",
   "main": "index.js",
   "scripts": {
-    "build": "npx tsc --build && nodemon ./build/main-server.js"
+    "build": "npx tsc --build && node ./build/main-server.js"
   },
   "keywords": [
     "CalaLingua",
