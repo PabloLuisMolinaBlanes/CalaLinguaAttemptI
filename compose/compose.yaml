@@ -1,0 +1,13 @@
+services:
+  db:
+    build: ./db
+  frontend:
+    build: ../frontend/cala-lingua-frontend
+    command: npm run dev
+    ports: 
+     - 5173:5173
+  backend:
+    build: ../backend
+    command: npm run build
+    ports:
+     - 3000:3000

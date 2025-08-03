@@ -5,4 +5,4 @@ ENV MYSQL_DATABASE=CostaLingua \
 
 ADD schema.sql /docker-entrypoint-initdb.d
 
-#EXPOSE 3306
+EXPOSE 3306

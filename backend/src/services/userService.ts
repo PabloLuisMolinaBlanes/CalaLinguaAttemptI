@@ -1,6 +1,6 @@
 import mysql, {RowDataPacket, FieldPacket} from 'mysql2';
 const con = mysql.createPool({
-    host: "localhost",
+    host: "db",
     user: "root",
     password: "root", // Default username and password. root:root, highly advisable to change this if using.
     database: "CostaLingua"
