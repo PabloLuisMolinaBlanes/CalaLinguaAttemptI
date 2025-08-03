@@ -24,6 +24,8 @@ docker compose -f ./compose/compose.yaml up
 
 Your webapp will be accessible then in http://localhost:5173 by default.
 
+The default username and password combination is usuario:usuario
+
 Let me know if there are any problems I have not considered!
 
 ## Features
@@ -35,13 +37,13 @@ Let me know if there are any problems I have not considered!
 
 ## Technologies
 
-So far the technologies I will be using here are:
+So far the technologies I am using here are:
 
 * Vite (as the frontend server)
 * React with Typescript (as the main frontend codebase language)
 * TailwindCSS (as my CSS framework)
 * Node.JS (Backend run environment)
 * Express.JS (as the backend server)
-* Argon2 (or possibly bcrypt) as cryptography library
+* bcrypt as cryptography library
 * Axios to make any external requests
-* Docker (if deployed)
+* Docker/Docker Compose
