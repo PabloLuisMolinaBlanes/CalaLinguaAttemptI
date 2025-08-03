@@ -8,6 +8,24 @@ CalaLingua is meant as a platform so people can learn Spanish.
 
 The code is provided under the MIT Licence—see LICENSE for details.
 
+# Deployment
+
+You will be able to deploy any version classified under "Releases" by the following steps:
+
+1. You will need to have Docker Engine installed, you can find instructions for installing it for your OS on the [Docker documentation](https://docs.docker.com/engine/install/)
+2. Once you have installed Docker, then you must access the main folder from the terminal and type
+```{bash}
+docker compose -f ./compose/compose.yaml build --no-cache
+```
+3. Then, to deploy the application on your Docker instance, you type in
+```{bash}
+docker compose -f ./compose/compose.yaml up
+```
+
+Your webapp will be accessible then in http://localhost:5173 by default.
+
+Let me know if there are any problems I have not considered!
+
 ## Features
 
 * Secure authentication, login and registration (session-based authentication)
